@@ -1,11 +1,18 @@
 import express from "express";
+import cors from "cors";
+import postsRoutes from "./routes/postsRoutes";
+import { connectDB } from "./config/db";
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+app.use(express.json());
+app.use(cors());
 
-app.listen(3000, () => {
-  console.log(`Server is running on port ${process.env.PORT}`);
+app.use("/api/posts", postsRoutes);
+
+const PORT = process.env.PORT;
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server started on port ${PORT}`);
+    });
 });
