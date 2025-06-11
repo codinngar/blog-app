@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 const HomePage = () => {
     return (
-        <div className="flex flex-col gap-24 px-6 py-20 mx-auto md:px-12 lg:px-20 max-w-7xl">
+        <div className="flex flex-col gap-24">
             <Hero />
             <Separator />
             <PinnedPost />

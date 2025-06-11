@@ -19,7 +19,7 @@ export default function PostPage() {
     if (!post) return <LoadingPage />;
 
     return (
-        <div className="flex flex-col gap-4 px-6 py-20 mx-auto md:px-24 lg:px-30 max-w-5xl">
+        <div>
             <Link to={"/"} className="hidden lg:block">
                 <Button variant="secondary" className="fixed top-10 left-12">
                     <ArrowLeft />
