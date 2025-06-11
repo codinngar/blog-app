@@ -19,7 +19,7 @@ export default function PostPage() {
     if (!post) return <LoadingPage />;
 
     return (
-        <div>
+        <div className="flex flex-col gap-4">
             <Link to={"/"} className="hidden lg:block">
                 <Button variant="secondary" className="fixed top-10 left-12">
                     <ArrowLeft />

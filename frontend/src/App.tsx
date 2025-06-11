@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import PostPage from "./pages/PostPage";
+import CreatePostPage from "./pages/CreatePostPage";
 
 const App = () => {
     return (
@@ -8,6 +9,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/posts/:id" element={<PostPage />} />
+                <Route path="/create-post" element={<CreatePostPage />} />
             </Routes>
         </div>
     );
