@@ -26,14 +26,7 @@ export const getPostById = async (req: Request, res: Response) => {
 
 export const createPost = async (req: Request, res: Response) => {
     try {
-        const { title, description, author, image, content } = req.body;
-        const post = await Post.create({
-            title,
-            description,
-            author,
-            image,
-            content,
-        });
+        const post = await Post.create(req.body);
 
         res.status(200).json(post);
     } catch (error) {
@@ -45,15 +38,9 @@ export const createPost = async (req: Request, res: Response) => {
 export const updatePost = async (req: Request, res: Response): Promise<any> => {
     try {
         const { id } = req.params;
-        const { title, description, image, content } = req.body;
         const post = await Post.findByIdAndUpdate(
             id,
-            {
-                title,
-                description,
-                image,
-                content,
-            },
+            { ...req.body },
             { new: true }
         );
 
