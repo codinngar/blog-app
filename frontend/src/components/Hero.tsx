@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const Hero = () => {
@@ -10,6 +11,9 @@ const Hero = () => {
         expert insights.
       </p>
       <Button>View all articles</Button>
+      <Link to="/create-post">
+        <Button>Create post</Button>
+      </Link>
     </div>
   );
 };
