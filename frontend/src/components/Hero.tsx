@@ -15,6 +15,12 @@ const Hero = () => {
         <Link to="/create-post">
           <Button>Create post</Button>
         </Link>
+        <Link to="/signup">
+          <Button>Signup</Button>
+        </Link>
+        <Link to="/login">
+          <Button>Login</Button>
+        </Link>
       </div>
     </div>
   );

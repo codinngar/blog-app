@@ -122,18 +122,14 @@ const SignupPage = () => {
         </form>
       </CardContent>
       <CardFooter className="flex-col gap-2">
-        <Button type="submit" className="w-full">
-          Login
+        <Button type="submit" className="w-full" onClick={handleSubmit}>
+          Signup
         </Button>
       </CardFooter>
       <CardAction>
         Already have an account?{" "}
         <Link to="/login">
-          <Button
-            variant="link"
-            className="p-0 pl-1 text-md"
-            onClick={handleSubmit}
-          >
+          <Button variant="link" className="p-0 pl-1 text-md">
             Login
           </Button>
         </Link>

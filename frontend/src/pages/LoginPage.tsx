@@ -95,7 +95,7 @@ const Login = () => {
         </form>
       </CardContent>
       <CardFooter className="flex-col gap-2">
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="w-full" onClick={handleSubmit}>
           Login
         </Button>
       </CardFooter>
@@ -105,7 +105,6 @@ const Login = () => {
           <Button
             variant="link"
             className="p-0 pl-1 text-md"
-            onClick={handleSubmit}
           >
             Signup
           </Button>
