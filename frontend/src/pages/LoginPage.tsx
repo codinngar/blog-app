@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -14,51 +12,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [inputValue, setInputValue] = useState({
-    email: "",
-    password: "",
-  });
-
-  const { email, password } = inputValue;
-
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setInputValue({
-      ...inputValue,
-      [name]: value,
-    });
-  };
-
-  const handleError = (err: Error) => alert(err);
-  const handleSuccess = (msg: string) => alert(msg);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const { data } = await axios.post("http://localhost:3000/login", {
-        ...inputValue,
-      });
-      console.log(data);
-      const { success, message } = data;
-      if (success) {
-        handleSuccess(message);
-        navigate("/");
-      } else {
-        handleError(message);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    setInputValue({
-      ...inputValue,
-      email: "",
-      password: "",
-    });
-  };
-
   return (
-    <Card className="shadow w-full max-w-sm border p-8 rounded-xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <Card className="shadow w-[90%] max-w-sm border p-8 rounded-xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <CardHeader>
         <CardTitle className="text-center font-bold text-xl">
           Login to your account
@@ -72,9 +27,7 @@ const Login = () => {
               <Input
                 id="email"
                 type="email"
-                value={email}
-                onChange={handleOnChange}
-                placeholder="Enter your email"
+                placeholder="example@gmail.com"
                 required
               />
             </div>
@@ -85,9 +38,7 @@ const Login = () => {
               <Input
                 id="password"
                 type="password"
-                value={password}
-                onChange={handleOnChange}
-                placeholder="Enter your password"
+                placeholder="Example1234"
                 required
               />
             </div>
@@ -95,7 +46,7 @@ const Login = () => {
         </form>
       </CardContent>
       <CardFooter className="flex-col gap-2">
-        <Button type="submit" className="w-full" onClick={handleSubmit}>
+        <Button type="submit" className="w-full">
           Login
         </Button>
       </CardFooter>
