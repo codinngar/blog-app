@@ -43,9 +43,7 @@ const Login = () => {
       const { success, message } = data;
       if (success) {
         handleSuccess(message);
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
+        navigate("/");
       } else {
         handleError(message);
       }
@@ -74,6 +72,8 @@ const Login = () => {
               <Input
                 id="email"
                 type="email"
+                value={email}
+                onChange={handleOnChange}
                 placeholder="Enter your email"
                 required
               />
@@ -85,6 +85,8 @@ const Login = () => {
               <Input
                 id="password"
                 type="password"
+                value={password}
+                onChange={handleOnChange}
                 placeholder="Enter your password"
                 required
               />
@@ -100,7 +102,13 @@ const Login = () => {
       <CardAction>
         Don't have an account?{" "}
         <Link to="/signup">
-          <Button variant="link" className="p-0 pl-1 text-md">Signup</Button>
+          <Button
+            variant="link"
+            className="p-0 pl-1 text-md"
+            onClick={handleSubmit}
+          >
+            Signup
+          </Button>
         </Link>
       </CardAction>
     </Card>

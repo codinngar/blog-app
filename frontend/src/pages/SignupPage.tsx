@@ -77,6 +77,8 @@ const SignupPage = () => {
               <Input
                 id="firstName"
                 type="text"
+                value={firstName}
+                onChange={handleOnChange}
                 placeholder="Enter your first name"
                 required
               />
@@ -86,6 +88,8 @@ const SignupPage = () => {
               <Input
                 id="lastName"
                 type="text"
+                value={lastName}
+                onChange={handleOnChange}
                 placeholder="Enter your last name"
                 required
               />
@@ -95,6 +99,8 @@ const SignupPage = () => {
               <Input
                 id="email"
                 type="email"
+                value={email}
+                onChange={handleOnChange}
                 placeholder="Enter your email"
                 required
               />
@@ -106,6 +112,8 @@ const SignupPage = () => {
               <Input
                 id="password"
                 type="password"
+                value={password}
+                onChange={handleOnChange}
                 placeholder="Enter your password"
                 required
               />
@@ -121,7 +129,11 @@ const SignupPage = () => {
       <CardAction>
         Already have an account?{" "}
         <Link to="/login">
-          <Button variant="link" className="p-0 pl-1 text-md">
+          <Button
+            variant="link"
+            className="p-0 pl-1 text-md"
+            onClick={handleSubmit}
+          >
             Login
           </Button>
         </Link>
