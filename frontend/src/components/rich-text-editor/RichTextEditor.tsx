@@ -28,7 +28,7 @@ const RichTextEditor = ({ content, onChange }: RichTextEditorProps) => {
     editorProps: {
       attributes: {
         class:
-          "p-4 outline-none font-inter overflow-hidden select:bg-black select:text-white",
+          "p-4 min-h-[250px] outline-none font-inter overflow-hidden select:bg-black select:text-white",
       },
     },
     extensions: [

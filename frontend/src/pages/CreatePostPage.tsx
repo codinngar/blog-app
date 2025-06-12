@@ -111,11 +111,7 @@ const CreatePostPage = () => {
               <SelectValue placeholder="Tag" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="apple">Apple</SelectItem>
-              <SelectItem value="banana">Banana</SelectItem>
-              <SelectItem value="blueberry">Blueberry</SelectItem>
-              <SelectItem value="grapes">Grapes</SelectItem>
-              <SelectItem value="pineapple">Pineapple</SelectItem>
+              <SelectItem value="technology">Technology</SelectItem>
             </SelectContent>
           </Select>
         </div>

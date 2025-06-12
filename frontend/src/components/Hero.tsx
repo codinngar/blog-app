@@ -10,10 +10,12 @@ const Hero = () => {
         development. From UI components to design systems, stay updated with our
         expert insights.
       </p>
-      <Button>View all articles</Button>
-      <Link to="/create-post">
-        <Button>Create post</Button>
-      </Link>
+      <div className="flex gap-4">
+        <Button>View all articles</Button>
+        <Link to="/create-post">
+          <Button>Create post</Button>
+        </Link>
+      </div>
     </div>
   );
 };
